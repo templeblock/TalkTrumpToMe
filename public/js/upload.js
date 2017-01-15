@@ -47,7 +47,7 @@ $('#upload-input').on('change', function(){
               src: [data],
               autoplay: false,
               loop: true,
-              volume: 0.5,
+              volume: 1,
               onend: function() {
                 console.log('Finished!');
               }
