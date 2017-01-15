@@ -14,17 +14,21 @@ app.post('/upload', function(req, res){
 
   // create an incoming form object
   var form = new formidable.IncomingForm();
+  var filename = undefined;
 
   // WE SHOULD ONLY PUT A MILLION FILES AT A TIME BUT I DONT WANT TO BREAK MY SERVER
   form.multiples = false;
 
   // grab em by the /uploads directory
-  form.uploadDir = path.join(__dirname, '/uploads');
+  form.uploadDir = path.join(__dirname, '/public/uploads');
 
   // every time a file has been uploaded successfully,
   // rename it to it's orignal name
   form.on('file', function(field, file) {
+    //console.log(file);
+    filename = path.join('/uploads', file.name);
     fs.rename(file.path, path.join(form.uploadDir, file.name));
+    
   });
 
   // log any errors that occur
@@ -34,18 +38,7 @@ app.post('/upload', function(req, res){
 
   // once all the files have been uploaded, send a response to the client
   form.on('end', function() {
-    var options = {root : __dirname};
-    // res.sendFile('public/css/styles.css', options, function (err) {
-    //     if (err) {
-    //       console.log(err);
-    //       res.status(err.status).end();
-    //     }
-    //     else {
-    //       console.log('Sent');
-    //     }
-    //     res.end('success');
-    // });
-    
+    res.json(filename);
   });
 
   // parse the incoming request containing the form data

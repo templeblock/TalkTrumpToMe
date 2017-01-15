@@ -4,9 +4,7 @@ $('.upload-btn').on('click', function (){
     $('.progress-bar').width('0%');
 });
 
-  var sound = new Howl({
-    src: ['trump-speech-clean/trump-0001.wav']
-  });
+var sound = undefined;
 
 $('.play-btn').on('click', function(){
   console.log('begin playing')
@@ -44,7 +42,19 @@ $('#upload-input').on('change', function(){
       processData: false,
       contentType: false,
       success: function(data){
-          console.log('upload successful!\n' + data);
+          console.log('upload successful!\n', data);
+          sound = new Howl({
+              src: [data],
+              autoplay: false,
+              loop: true,
+              volume: 0.5,
+              onend: function() {
+                console.log('Finished!');
+              }
+            });
+      },
+      error: function(XMLHttpRequest, textStatus, errorThrown){
+        alert("Status: " + textStatus); alert("Error: " + errorThrown); 
       },
       xhr: function() {
         // create an XMLHttpRequest
@@ -64,7 +74,7 @@ $('#upload-input').on('change', function(){
 
             // once the upload reaches 100%, set the progress bar text to done
             if (percentComplete === 100) {
-              $('.progress-bar').html('Done');
+              $('.progress-bar').html('Done!');
             }
 
           }
