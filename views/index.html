@@ -1,45 +1,51 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Trumpify Your Voice</title>
-  <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-  <link href="css/styles.css" rel="stylesheet">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Trumpify Your Voice</title>
+    <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link href="css/styles.css" rel="stylesheet">
 </head>
+
 <body>
 
-  <div class="container">
-    <div class="row">
-      <div class="col-xs-12">
-        <div class="panel panel-default">
-          <div class="panel-body">
-            <span class="glyphicon glyphicon-cloud-upload"></span>
-            <h2>Trumpify Yourself</h2>
-            <h4>tobefigured.out</h4>
-            <div class="progress">
-              <div class="progress-bar" role="progressbar"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <span class="glyphicon glyphicon-cloud-upload"></span>
+                        <h2>Trumpify Yourself</h2>
+                        <h4>tobefigured.out</h4>
+                        <div class="progress">
+                            <div class="progress-bar" role="progressbar"></div>
+                        </div>
+                        <button class="btn btn-lg upload-btn" type="button">Upload Audio File</button>
+                    </div>
+                    <div class="audio-interface">
+                        <button class="btn btn-lg" id="restart-btn" type="button">Restart</button>
+                        <img src="/images/ti0.jpg" id="image" width="400" height="400">
+                        <button class="btn btn-small play-btn" type="button">Play</button>
+                        <button class="btn btn-small pause-btn" type="button" style="display: none">Pause</button>
+                    </div>
+                </div>
             </div>
-              <button class="btn btn-lg upload-btn" type="button">Upload Audio File</button>
-          </div>
-          <div>
-            <button class="btn btn-small play-btn" type="button">Play</button>
-            <button class="btn btn-small pause-btn" type="button">Pause</button>
-          </div>
         </div>
-      </div>
     </div>
-  </div>
 
-  <input id="upload-input" type="file" name="uploads[]" multiple="multiple"></br>
+    <input id="upload-input" type="file" name="uploads[]" multiple="multiple"></br>
 
-  <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.0.2/howler.core.min.js"></script>
-  <script src="js/upload.js"></script>
+    <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.0.2/howler.core.min.js"></script>
+    <script src="js/upload.js"></script>
+    <script src="js/trump.js"></script>
 
 </body>
+
 </html>

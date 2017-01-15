@@ -1,4 +1,3 @@
 /node_modules
-/public/trump-speech-clean
-/uploads
+*.wav
 auth.txt
