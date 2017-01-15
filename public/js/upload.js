@@ -4,6 +4,20 @@ $('.upload-btn').on('click', function (){
     $('.progress-bar').width('0%');
 });
 
+  var sound = new Howl({
+    src: ['trump-speech-clean/trump-0001.wav']
+  });
+
+$('.play-btn').on('click', function(){
+  console.log('begin playing')
+  sound.play();
+});
+
+$('.pause-btn').on('click', function(){
+  console.log('stopped playing');
+  sound.stop();
+});
+
 $('#upload-input').on('change', function(){
 
   var files = $(this).get(0).files;

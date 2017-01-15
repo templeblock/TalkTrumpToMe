@@ -15,10 +15,10 @@ app.post('/upload', function(req, res){
   // create an incoming form object
   var form = new formidable.IncomingForm();
 
-  // specify that we want to allow the user to upload multiple files in a single request
-  form.multiples = true;
+  // WE SHOULD ONLY PUT A MILLION FILES AT A TIME BUT I DONT WANT TO BREAK MY SERVER
+  form.multiples = false;
 
-  // store all uploads in the /uploads directory
+  // grab em by the /uploads directory
   form.uploadDir = path.join(__dirname, '/uploads');
 
   // every time a file has been uploaded successfully,
@@ -34,11 +34,24 @@ app.post('/upload', function(req, res){
 
   // once all the files have been uploaded, send a response to the client
   form.on('end', function() {
-    res.end('success');
+    var options = {root : __dirname};
+    // res.sendFile('public/css/styles.css', options, function (err) {
+    //     if (err) {
+    //       console.log(err);
+    //       res.status(err.status).end();
+    //     }
+    //     else {
+    //       console.log('Sent');
+    //     }
+    //     res.end('success');
+    // });
+    
   });
 
   // parse the incoming request containing the form data
   form.parse(req);
+
+
 
 });
 
