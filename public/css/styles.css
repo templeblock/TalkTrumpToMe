@@ -5,7 +5,7 @@
 html,
 body {
   height: 100%;
-  background-color: #4791D2;
+  background-color: #e60000;
 }
 
 body {
@@ -30,6 +30,11 @@ body {
   color: #ffffff;
   background-color: #FA8900;
   border: none;
+}
+
+
+.progress {
+  display: none;
 }
 
 h4 {

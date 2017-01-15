@@ -20,6 +20,8 @@ $('.pause-btn').on('click', function(){
 
 $('#upload-input').on('change', function(){
 
+  $('.progress').show();
+
   var files = $(this).get(0).files;
 
   if (files.length > 0){
